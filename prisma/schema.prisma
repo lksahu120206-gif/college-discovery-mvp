@@ -1,0 +1,19 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model College {
+  id          String   @id @default(uuid())
+  name        String
+  location    String
+  fees        Int
+  rating      Float
+  overview    String
+  courses     String[]
+  placements  String
+}
